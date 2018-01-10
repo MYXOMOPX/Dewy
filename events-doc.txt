@@ -1,0 +1,14 @@
+events:
+	init({parent: Menu, args: any[]}); // Вызывается после создания. parent - родительская меню, args - параметры запуска
+	finish({value: any}); // Вызывается при завершении. Можно подменить значение. (кроме undefined)
+	cancel({}) => void; // при отмене
+	attach({}) => void; // При прикреплении к "активному" сообщению;
+	deattach({reason}) => void; // при откреплении;
+	
+	// Эвенты с сообщениями
+	callbackQuery({callbackQuery}) => void;
+	text({message}) => void;
+	message({message}) => void;
+	
+	updateView({view}) => view; При изменении вьюхи. Можно вернуть и подменить вьюху.
+	
